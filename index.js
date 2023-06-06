@@ -3,7 +3,11 @@ const {Client, LocalAuth} = require("whatsapp-web.js")
 const client = new Client({
     authStrategy: new LocalAuth({
         clientId: "client1"
-    })
+    }),
+    puppeteer: {
+        headless: true,
+		args: ['--no-sandbox'],
+	}
 })
 
 require('dotenv').config()
