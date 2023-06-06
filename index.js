@@ -32,20 +32,25 @@ client.on('message', (msg)=>{
         console.log("Reply to ", replyTo)
         return
     }
+
+    const isPC = msg.from.includes("@c")
     
-    var forwardMsg = ""
-    console.log(msg)
-    forwardMsg += `Pesan dari: ${from}\n`
-    forwardMsg += `Nickname: ${nickname}\n`
-    forwardMsg += `Pesan:\n${message}`
-
-    strReply = "Copy pesan dibawah ini dan isi pesan untuk membalas"
-    formatReply = `b ${from} | \n`
-
-
-    client.sendMessage(forwardTo, forwardMsg)
-    client.sendMessage(forwardTo, strReply)
-    client.sendMessage(forwardTo, formatReply)
+    if(isPC){
+        var forwardMsg = ""
+        console.log(msg)
+        forwardMsg += `Pesan dari: ${from}\n`
+        forwardMsg += `Nickname: ${nickname}\n`
+        forwardMsg += `Pesan:\n${message}`
+    
+        strReply = "Copy pesan dibawah ini dan isi pesan untuk membalas"
+        formatReply = `b ${from} | \n`
+    
+    
+        client.sendMessage(forwardTo, forwardMsg)
+        client.sendMessage(forwardTo, strReply)
+        client.sendMessage(forwardTo, formatReply)
+    }
+    
 })
 
 client.initialize()
