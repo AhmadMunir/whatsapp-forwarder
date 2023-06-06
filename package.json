@@ -1,0 +1,16 @@
+{
+  "name": "whatsapp-forwarder",
+  "version": "0.0.1",
+  "description": "Whatsapp Forwarder",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "khalila",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.1.4",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.21.0"
+  }
+}
